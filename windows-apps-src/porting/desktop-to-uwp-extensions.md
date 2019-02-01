@@ -942,14 +942,20 @@ Users and other processes can use an alias to start your application without hav
   xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="uap3, desktop">
   ...
-  <uap3:Extension
-        Category="windows.appExecutionAlias"
-        Executable="exes\launcher.exe"
-        EntryPoint="Windows.FullTrustApplication">
-      <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Contoso.exe" />
-      </uap3:AppExecutionAlias>
-  </uap3:Extension>
+  <Applications>
+      <Application>
+          <Extensions>
+              <uap3:Extension
+                    Category="windows.appExecutionAlias"
+                    Executable="exes\launcher.exe"
+                    EntryPoint="Windows.FullTrustApplication">
+                  <uap3:AppExecutionAlias>
+                    <desktop:ExecutionAlias Alias="Contoso.exe" />
+                  </uap3:AppExecutionAlias>
+              </uap3:Extension>
+          </Extensions>
+      </Application>
+  </Applications>
 ...
 </Package>
 ```
